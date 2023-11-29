@@ -26,18 +26,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Commit files
-        run: |
-          echo `date +"%Y-%m-%d %H:%M:%S"` begin ... > time.txt
-          git add .
-          git commit -a -m "Add Changes" 
-
-      - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          branch: main
-
       - uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
@@ -45,4 +33,4 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy -b master --force
+      - run: mkdocs gh-deploy --force
