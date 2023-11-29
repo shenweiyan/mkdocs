@@ -37,7 +37,7 @@ theme:
 
 # Repository
 repo_name: mkdocs-blog
-repo_url: https://github.com/shenweiyan/mkdocs-blog/
+repo_url: https://github.com/shenweiyan/mkdocs/
 edit_uri: edit/main/docs/
 site_author: Steven Shum
 
