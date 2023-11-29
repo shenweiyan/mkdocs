@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 检查分支
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: 配置Git用户名邮箱
+      - name: Git configure
         run: |
           git config --global user.name "shenweiyan"
           git config --global user.email "weiyanshum@gmail.com"
@@ -21,10 +21,22 @@ jobs:
       - name: Git Pull
         run: git pull
 
-      - name: 安装Python3
+      - name: Install Python3
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
+      - name: Commit files
+        run: |
+          echo `date +"%Y-%m-%d %H:%M:%S"` begin ... > time.txt
+          git add .
+          git commit -a -m "Add Changes" 
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          branch: main
 
       - uses: actions/cache@v3
         with:
@@ -33,4 +45,4 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy -b master --force
