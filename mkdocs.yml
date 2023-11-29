@@ -1,0 +1,78 @@
+site_name: Mkdocs blog
+site_url: https://shenweiyan.github.io/mkdocs-blog
+site_description: 'Testing for Mkdocs blog'
+docs_dir: "docs"
+site_dir: "site"
+theme:
+  name: material
+  font:
+    text: "Microsoft Yahei"
+    code: "Consolas,Courier,courier new,stkaiti,kaiti,simkai,monospace"
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.sections
+    - navigation.path          # Sponsors only
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+    - navigation.footer
+  palette:
+    - scheme: default
+      primary: grey
+      accent: indigo
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to dark mode
+    - scheme: slate
+      primary: grey
+      accent: indigo
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to light mode
+
+# Repository
+repo_name: mkdocs-blog
+repo_url: https://github.com/shenweiyan/mkdocs-blog/
+edit_uri: edit/main/docs/
+site_author: Steven Shum
+
+
+nav:
+    - Home: index.md
+    - Blog:
+        - blog/index.md
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - md_in_html
+    - pymdownx.superfences
+    - smarty
+    - toc:
+        permalink: True
+        separator: "-"
+        toc_depth: 5
+    - pymdownx.highlight
+    - pymdownx.arithmatex:
+        generic: true
+
+extra_javascript:
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js    
+    
+plugins:
+  - info
+  - search:
+      separator: '[\s\u200b\-]'
+  - blog:
+      blog_dir: blog
+      post_dir: "{blog}/posts"
+      archive: true
+      categories: true
+      pagination: true
+      pagination_per_page: 5
