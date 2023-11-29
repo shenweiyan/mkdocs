@@ -1,6 +1,6 @@
-site_name: Mkdocs blog
-site_url: https://shenweiyan.github.io/mkdocs-blog
-site_description: 'Testing for Mkdocs blog'
+site_name: Mkdocs material reproduction
+site_url: https://shenweiyan.github.io/mkdocs
+site_description: 'Minimal reproduction for Mkdocs material.'
 docs_dir: "docs"
 site_dir: "site"
 theme:
@@ -36,7 +36,7 @@ theme:
         name: Switch to light mode
 
 # Repository
-repo_name: mkdocs-blog
+repo_name: shenweiyan/mkdocs
 repo_url: https://github.com/shenweiyan/mkdocs/
 edit_uri: edit/main/docs/
 site_author: Steven Shum
