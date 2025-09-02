@@ -9,3 +9,5 @@ MkDocs-material minimal reproduction for the bug
 <!-- Security scan triggered at 2025-09-02 15:26:36 -->
 
 <!-- Security scan triggered at 2025-09-02 15:27:15 -->
+
+<!-- Security scan triggered at 2025-09-02 15:27:42 -->
